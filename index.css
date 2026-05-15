@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+    --cadet-blue: #5f9ea0;
+    --dark-grey: #2d3436;
+    --light-grey: #dfe6e9;
+    --medium-grey: #b2bec3;
+    --accent-blue: #4682b4;
+}
+
+body {
+    font-family: 'JetBrains Mono', monospace; /* Fonte estilo código/tech */
+    background-color: var(--light-grey);
+    background-image: radial-gradient(var(--medium-grey) 0.5px, transparent 0.5px);
+    background-size: 20px 20px; /* Efeito de papel quadriculado ao fundo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: #f0f0f0;
+    padding: 3rem;
+    border-radius: 30px;
+    box-shadow: 20px 20px 60px #cacaca, -20px -20px 60px #ffffff; /* Efeito Neumórfico */
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid rgba(95, 158, 160, 0.2);
+}
+
+h1 {
+    color: var(--dark-grey);
+    font-weight: 700;
+    text-transform: lowercase;
+    border-bottom: 4px solid var(--cadet-blue);
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+h2#player-display {
+    font-size: 1rem;
+    color: var(--cadet-blue);
+    background: rgba(95, 158, 160, 0.1);
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+
+.hidden { display: none; }
+
+/* Inputs Estilizados */
+input {
+    background: #f0f0f0;
+    border: none;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: inset 5px 5px 10px #d1d1d1, inset -5px -5px 10px #ffffff;
+    color: var(--dark-grey);
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    box-shadow: inset 2px 2px 5px #d1d1d1, inset -2px -2px 5px #ffffff;
+    color: var(--cadet-blue);
+}
+
+/* Botão Industrial */
+button {
+    margin-top: 20px;
+    background-color: var(--cadet-blue);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 0px #4a7c7d;
+    transition: all 0.1s;
+}
+
+button:active {
+    transform: translateY(4px);
+    box-shadow: 0 0px 0px #4a7c7d;
+}
+
+/* Display de Palavras Criativo */
+.word-slots {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 40px 0;
+}
+
+.letter-slot {
+    width: 45px;
+    height: 55px;
+    background: var(--dark-grey);
+    color: var(--cadet-blue);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 4px 4px 0px var(--medium-grey);
+    transition: transform 0.2s;
+}
+
+/* Quando a letra é preenchida */
+.letter-slot:not(:empty) {
+    background: var(--cadet-blue);
+    color: white;
+    transform: rotate(-3deg); /* Charme visual */
+}
+
+.status-info {
+    margin-top: 30px;
+    background: rgba(0,0,0,0.03);
+    padding: 15px;
+    border-radius: 15px;
+}
+
+#letter-input {
+    width: 80px;
+    font-size: 2rem;
+    text-align: center;
+}
+
+#game-message {
+    height: 24px;
+    font-size: 0.9rem;
+    letter-spacing: -0.5px;
+}
+
+/* Fundo quando ganha */
+body.win {
+    background-color: #b8f5c2;
+    background-image: none;
+    transition: background-color 0.5s ease;
+}
+
+/* Fundo quando perde */
+body.lose {
+    background-color: #d04949;
+    background-image: none;
+    transition: background-color 0.5s ease;
+}
