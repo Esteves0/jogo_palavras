@@ -67,7 +67,7 @@ async function buscarPalavras() {
         wordDisplay.appendChild(span)
     }
 
-    document.getElementById('dica-display').innerHTML = `Dica: (data.dica). `
+    document.getElementById('dica-display').innerHTML = `Dica: ${data.dica} `
 
 }
 async function tentarLetra(event) {
@@ -117,6 +117,7 @@ async function tentarLetra(event) {
 
                 // muda fundo para derrota
                 document.body.classList.add('lose')
+                document.getElementById('palavra-revelada').innerHTML = `A palavra era: ${data.palavra}`
 
             } else {
                 gameMessage.style.color = 'green'
